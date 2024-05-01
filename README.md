@@ -1,4 +1,4 @@
-## Find or add a country 🌍 ⬇️ 🇨🇴 🇦🇺 🇧🇾 🇧🇸 🇫🇷
+## Find or add a country 🌍 ⬇️ :es: 🇦🇺 🇧🇾 🇧🇸 🇫🇷
 
 This web application allows you to explore information about countries, capitals and flags. Add new countries to the list too!
 
