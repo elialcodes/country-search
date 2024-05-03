@@ -1,8 +1,40 @@
-# React + Vite
+## Find or add a country 🌍 ⬇️ :es: 🇦🇺 🇧🇾 🇧🇸 🇫🇷
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This web application allows you to explore information about countries, capitals and flags. Add new countries to the list too!
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features :star:
+
+- Search: quickly find countries by entering a country name
+- Filtering: refine your search results by applying filters such country name or/and by continent
+- Add country: there are some inputs for the user types the necessary information and adds a card to the new country
+
+
+## Extras :1st_place_medal:
+
+- Remove country: each country has a delete button to remove it from the country list
+
+
+## Tech Stack 📚
+
+- Frontend: HTML, CSS, JavaScript and React.
+
+
+## Installation 💻 
+
+- Clone the repository: https://github.com/elialcodes/country-search.git
+- Install node_modules folder: 
+
+```bash
+  npm install
+```
+- Start the project: 
+
+```bash
+  npm run dev
+```
+
+
+## Links 🔗
+
+https://elialcodes.github.io/country-search/
