@@ -1,4 +1,3 @@
-// Fichero src/components/App.jsx, componente principal de la web
 import '../styles/App.scss';
 import '../styles/core/reset.scss';
 import { useState } from 'react';
@@ -41,11 +40,8 @@ function App() {
     setCountryContinent(value);
   };
 
-  //Función para añadir países: consite en crear el objeto newCountry, cuyos datos
-  //mantendrán el formato importado en el json: name es un objeto, capital un array
-  //etc...
-  //y con el método spreed añadimos el objeto newCountry al array de objetos de
-  //los países:
+  //Función para añadir países: creamos el objeto newCountry con el formato importado en el json
+  //y con el método spreed añadimos el objeto newCountry al array de objetos de los países:
   const addCountry = () => {
     const newCountry = {
       name: { common: newName },
@@ -56,10 +52,9 @@ function App() {
     setCountries([...countries, newCountry]);
   };
 
-  //función para eliminar país: utilizamos como argumento el index que forzamos al crear cada
-  //país y con spreed formamos una constante con los países, a la que quitaremos el país seleccionado
-  //cuyo índice coincida con el click del evento, y la setearemos como nuevo estado de la variable
-  //de estado
+  //función para eliminar país: utilizamos como argumento el index que forzamos al crear cada país,
+  //formamos una constante con los países quitando el país seleccionado
+  //cuyo índice coincida con el click del evento, y setearemos la variable de estado
   const deleteCountry = (index) => {
     const previousCountries = [...countries];
     previousCountries.splice(index, 1);

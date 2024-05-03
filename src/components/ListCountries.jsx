@@ -2,10 +2,8 @@ import Country from './Country';
 import '../styles/components/ListCountries.scss';
 import PropTypes from 'prop-types';
 
-//Al crear este componente, pasamos 2 proptipes que en realidad son para su componente hijo,
-//pero es aquí donde renderizamos la lista
-//Muy importante la prop del id para renderizar el componente hijo e identificarle cuando se hace
-//click en él
+//Componente para renderizar la lista, pasamos 2 proptipes para su componente hijo.
+//Muy importante la prop del id al renderizar el componente hijo e identificarle cuando se haga click en él
 function ListCountries({ infoCountries, onClickDeleteCountry }) {
   return (
     <div className="list">
