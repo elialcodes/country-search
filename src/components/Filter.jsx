@@ -27,7 +27,7 @@ function Filter({ onChangeInput, onChangeSelect }) {
         Search by continent:{' '}
       </label>
       <select id="continent" className="centered-element" type="text" onChange={handleSelect}>
-        <option value="">All</option>
+        <option value="All">All</option>
         <option value="Africa">Africa</option>
         <option value="Antarctica">Antarctica</option>
         <option value="Asia">Asia</option>

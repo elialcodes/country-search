@@ -2,8 +2,9 @@ import '../styles/components/Country.scss';
 import PropTypes from 'prop-types';
 
 function Country({ id, infoCountry, onClickDeleteCountry }) {
-  const handleRemoveCountry = (event) => {
+  const handleDeleteCountry = (event) => {
     onClickDeleteCountry(event.target.id);
+    console.log(id);
   };
 
   return (
@@ -12,7 +13,7 @@ function Country({ id, infoCountry, onClickDeleteCountry }) {
       <p>{infoCountry.name.common}</p>
       <p>{infoCountry.capital[0]}</p>
       <p>{infoCountry.continents[0]}</p>
-      <button className="button" id={id} onClick={handleRemoveCountry}>
+      <button className="button" id={id} onClick={handleDeleteCountry}>
         Eliminar
       </button>
     </div>

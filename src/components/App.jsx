@@ -15,10 +15,10 @@ function App() {
   const [inputSelect, setInputSelect] = useState('All');
 
   // Variables de estado de añadir país:
-  const [newName, setCountryName] = useState('');
-  const [newCapital, setCountryCapital] = useState('');
-  const [newFlag, setCountryFlag] = useState('');
-  const [newContinent, setCountryContinent] = useState('');
+  const [newCountryName, setCountryName] = useState('');
+  const [newCountryCapital, setCountryCapital] = useState('');
+  const [newCountryFlag, setCountryFlag] = useState('');
+  const [newCountryContinent, setCountryContinent] = useState('');
 
   //Funciones para setear:
   const handleSetInputValue = (value) => {
@@ -44,21 +44,22 @@ function App() {
   //y con el método spreed añadimos el objeto newCountry al array de objetos de los países:
   const addCountry = () => {
     const newCountry = {
-      name: { common: newName },
-      capital: [newCapital],
-      flag: newFlag,
-      continents: [newContinent],
+      name: { common: newCountryName },
+      capital: [newCountryCapital],
+      flag: newCountryFlag,
+      continents: [newCountryContinent],
     };
     setCountries([...countries, newCountry]);
   };
 
   //función para eliminar país: utilizamos como argumento el index que forzamos al crear cada país,
-  //formamos una constante con los países quitando el país seleccionado
+  //formamos una constante con los países y luego la quitaremos el país seleccionado
   //cuyo índice coincida con el click del evento, y setearemos la variable de estado
   const deleteCountry = (index) => {
     const previousCountries = [...countries];
     previousCountries.splice(index, 1);
     setCountries(previousCountries);
+    console.log(index);
   };
 
   //Función para filtrar según input de nombre país y según select de continente:
