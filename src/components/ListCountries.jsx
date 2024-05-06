@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 function ListCountries({ infoCountries, onClickDeleteCountry }) {
   return (
     <div className="list">
-      {infoCountries.map((infoCountry, i) => {
+      {infoCountries.map((infoCountry, id) => {
         return (
           <Country
-            key={i}
-            id={i}
+            key={id}
+            id={id}
             infoCountry={infoCountry}
             onClickDeleteCountry={onClickDeleteCountry}
           />

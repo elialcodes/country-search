@@ -55,11 +55,11 @@ function App() {
   //función para eliminar país: utilizamos como argumento el index que forzamos al crear cada país,
   //formamos una constante con los países y luego la quitaremos el país seleccionado
   //cuyo índice coincida con el click del evento, y setearemos la variable de estado
-  const deleteCountry = (index) => {
+  const deleteCountry = (id) => {
     const updatedCountries = [...filteredCountries];
-    updatedCountries.splice(index, 1);
+    updatedCountries.splice(id, 1);
     setCountries(updatedCountries);
-    console.log(index);
+    console.log(id);
     console.log(updatedCountries);
   };
 
