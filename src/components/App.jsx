@@ -10,18 +10,18 @@ function App() {
   //variable de estado de los datos
   const [countries, setCountries] = useState(dataCountries);
 
-  // Variables de estado del filter:
+  // variables de estado del filter:
   const [inputValue, setInputValue] = useState('');
   const [inputSelect, setInputSelect] = useState('All');
   const [removedCountries, setRemovedCountries] = useState([]);
 
-  // Variables de estado de añadir país:
+  // variables de estado de añadir país:
   const [newCountryName, setCountryName] = useState('');
   const [newCountryCapital, setCountryCapital] = useState('');
   const [newCountryFlag, setCountryFlag] = useState('');
   const [newCountryContinent, setCountryContinent] = useState('');
 
-  //Funciones para setear:
+  //funciones para setear:
   const handleSetInputValue = (value) => {
     setInputValue(value);
   };
@@ -44,7 +44,7 @@ function App() {
     setCountryContinent(value);
   };
 
-  //Función para añadir países: creamos el objeto newCountry con el formato importado en el json
+  //función para añadir países: creamos el objeto newCountry con el formato importado en el json
   //y con el método spreed añadimos el objeto newCountry al array de objetos de los países:
   const addCountry = () => {
     const newCountry = {
