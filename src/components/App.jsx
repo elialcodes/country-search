@@ -60,6 +60,7 @@ function App() {
     previousCountries.splice(index, 1);
     setCountries(previousCountries);
     console.log(index);
+    console.log(previousCountries);
   };
 
   //Función para filtrar según input de nombre país y según select de continente:
