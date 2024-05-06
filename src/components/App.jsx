@@ -13,6 +13,7 @@ function App() {
   // Variables de estado del filter:
   const [inputValue, setInputValue] = useState('');
   const [inputSelect, setInputSelect] = useState('All');
+  const [removedCountries, setRemovedCountries] = useState([]);
 
   // Variables de estado de añadir país:
   const [newCountryName, setCountryName] = useState('');
@@ -26,6 +27,9 @@ function App() {
   };
   const handleSetInputSelect = (value) => {
     setInputSelect(value);
+  };
+  const handleSetRemovedCountries = (commonName) => {
+    setRemovedCountries((prevValue) => [...prevValue, commonName]);
   };
   const handleSetCountryName = (value) => {
     setCountryName(value);
@@ -52,25 +56,29 @@ function App() {
     setCountries([...countries, newCountry]);
   };
 
-  //función para eliminar país: utilizamos como argumento el index que forzamos al crear cada país,
+  //función para eliminar país: utilizamos como argumento el id que forzamos al crear cada país,
   //formamos una constante con los países y luego la quitaremos el país seleccionado
   //cuyo índice coincida con el click del evento, y setearemos la variable de estado
-  const deleteCountry = (id) => {
-    const updatedCountries = [...filteredCountries];
-    updatedCountries.splice(id, 1);
-    setCountries(updatedCountries);
-    console.log(id);
-    console.log(updatedCountries);
-  };
+
+  // const handleRemoveCountry = (id) => {
+  //   const updatedCountries = countries.filter((country) => country.id !== id);
+  //   setCountries(updatedCountries);
+  //   console.log(updatedCountries);
+  // };
 
   //Función para filtrar según input de nombre país y según select de continente:
-  const filteredCountries = countries
-    .filter((country) => {
-      return country.name.common.toLowerCase().includes(inputValue.toLowerCase());
-    })
-    .filter((country) => {
-      return inputSelect !== 'All' ? country.continents[0] === inputSelect : true;
-    });
+  const filteredCountries = countries.filter((country) => {
+    if (inputValue && !country.name.common.toLowerCase().includes(inputValue.toLowerCase())) {
+      return false;
+    }
+    if (inputSelect !== 'All' && country.continents[0] !== inputSelect) {
+      return false;
+    }
+    if (removedCountries.length > 0 && removedCountries.includes(country.name.common)) {
+      return false;
+    }
+    return true;
+  });
 
   return (
     <div>
@@ -91,7 +99,10 @@ function App() {
 
       <Filter onChangeInput={handleSetInputValue} onChangeSelect={handleSetInputSelect} />
 
-      <ListCountries infoCountries={filteredCountries} onClickDeleteCountry={deleteCountry} />
+      <ListCountries
+        infoCountries={filteredCountries}
+        onClickDeleteCountry={handleSetRemovedCountries}
+      />
     </div>
   );
 }
