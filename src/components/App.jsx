@@ -56,11 +56,11 @@ function App() {
   //formamos una constante con los países y luego la quitaremos el país seleccionado
   //cuyo índice coincida con el click del evento, y setearemos la variable de estado
   const deleteCountry = (index) => {
-    const previousCountries = [...filteredCountries];
-    previousCountries.splice(index, 1);
-    setCountries(previousCountries);
+    const updatedCountries = [...filteredCountries];
+    updatedCountries.splice(index, 1);
+    setCountries(updatedCountries);
     console.log(index);
-    console.log(previousCountries);
+    console.log(updatedCountries);
   };
 
   //Función para filtrar según input de nombre país y según select de continente:
