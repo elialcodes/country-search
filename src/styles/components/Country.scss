@@ -2,9 +2,9 @@
   font-size: 20px;
   line-height: 30px;
   text-align: center;
-  border: 1px solid black;
+  border: 3px solid lightgreen;
+  border-radius: 10px;
   padding-bottom: 15px;
-  box-shadow: 3px 3px 10px lightgreen;
 
   .flag {
     font-size: 40px;
@@ -13,8 +13,13 @@
 
   .button {
     background-color: lightgreen;
-    padding: 3px;
+    padding: 2px 5px;
     margin-top: 15px;
+    border-radius: 5px;
     cursor: pointer;
+  }
+
+  .button:hover {
+    box-shadow: 3px 3px 5px gray;
   }
 }

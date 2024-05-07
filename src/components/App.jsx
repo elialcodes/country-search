@@ -78,10 +78,8 @@ function App() {
     <div>
       <header className="header">
         <h1>Country Info App</h1>
-        <h2>
-          Explore information about countries, capitals, and flags. Add new countries and filter
-          through the list!
-        </h2>
+        <h2>Explore information about countries, capitals, and flags.</h2>
+        <h2>Add new countries and filter through the list!</h2>
       </header>
 
       <FormAddCountry

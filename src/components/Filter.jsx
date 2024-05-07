@@ -16,7 +16,13 @@ function Filter({ onChangeInput, onChangeSelect }) {
       <label className="label" htmlFor="name">
         Search by country:{' '}
       </label>
-      <input id="name" type="text" placeholder="Country..." onChange={handleInput} />
+      <input
+        className="input"
+        id="name"
+        type="text"
+        placeholder="Country..."
+        onChange={handleInput}
+      />
       <label className="label" htmlFor="continent">
         Search by continent:{' '}
       </label>

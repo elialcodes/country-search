@@ -29,10 +29,15 @@ function Form({
     <>
       <h3 className="titlesFilter">Add Country:</h3>
       <form className="form" action="">
-        <input type="text" placeholder="Country name" onChange={handleAddName} />
-        <input type="text" placeholder="Capital" onChange={handleAddCapital} />
-        <input type="text" placeholder="Flag" onChange={handleAddFlag} />
-        <input type="text" placeholder="Continent" onChange={handleAddContinent} />
+        <input className="input" type="text" placeholder="Country name" onChange={handleAddName} />
+        <input className="input" type="text" placeholder="Capital" onChange={handleAddCapital} />
+        <input className="input" type="text" placeholder="Flag" onChange={handleAddFlag} />
+        <input
+          className="input"
+          type="text"
+          placeholder="Continent"
+          onChange={handleAddContinent}
+        />
         <input type="submit" value="Enviar" className="buttonSubmit" onClick={handleNewCountry} />
       </form>
     </>
