@@ -19,8 +19,10 @@ function ListCountries({ infoCountries, onClickDeleteCountry }) {
     </div>
   );
 }
+
 ListCountries.propTypes = {
   infoCountries: PropTypes.array,
   onClickDeleteCountry: PropTypes.func,
 };
+
 export default ListCountries;

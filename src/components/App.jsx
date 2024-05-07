@@ -13,7 +13,6 @@ function App() {
   // variables de estado del filter:
   const [inputValue, setInputValue] = useState('');
   const [inputSelect, setInputSelect] = useState('All');
-  const [removedCountries, setRemovedCountries] = useState([]);
 
   // variables de estado de añadir país:
   const [newCountryName, setCountryName] = useState('');
@@ -27,9 +26,6 @@ function App() {
   };
   const handleSetInputSelect = (value) => {
     setInputSelect(value);
-  };
-  const handleSetRemovedCountries = (commonName) => {
-    setRemovedCountries((prevValue) => [...prevValue, commonName]);
   };
   const handleSetCountryName = (value) => {
     setCountryName(value);
@@ -46,6 +42,7 @@ function App() {
 
   //función para añadir países: creamos el objeto newCountry con el formato importado en el json
   //y con el método spreed añadimos el objeto newCountry al array de objetos de los países:
+
   const addCountry = () => {
     const newCountry = {
       name: { common: newCountryName },
@@ -56,25 +53,22 @@ function App() {
     setCountries([...countries, newCountry]);
   };
 
-  //función para eliminar país: utilizamos como argumento el id que forzamos al crear cada país,
-  //formamos una constante con los países y luego la quitaremos el país seleccionado
-  //cuyo índice coincida con el click del evento, y setearemos la variable de estado
+  //función para eliminar país: utilizamos como argumento el id (name.common) que forzamos al
+  //crear cada país, filtramos para que nos devuelva todos los países que no coinciden con
+  //el id del evento click, y setearemos la variable de estado:
 
-  // const handleRemoveCountry = (commonName) => {
-  //   const updatedCountries = countries.filter((country) => country.name.common !== commonName);
-  //   setCountries(updatedCountries);
-  //   console.log(updatedCountries);
-  // };
+  const handleRemoveCountry = (commonName) => {
+    const updatedCountries = countries.filter((country) => country.name.common !== commonName);
+    setCountries(updatedCountries);
+  };
 
   //Función para filtrar según input de nombre país y según select de continente:
+
   const filteredCountries = countries.filter((country) => {
     if (inputValue && !country.name.common.toLowerCase().includes(inputValue.toLowerCase())) {
       return false;
     }
     if (inputSelect !== 'All' && country.continents[0] !== inputSelect) {
-      return false;
-    }
-    if (removedCountries.length > 0 && removedCountries.includes(country.name.common)) {
       return false;
     }
     return true;
@@ -89,6 +83,7 @@ function App() {
           through the list!
         </h2>
       </header>
+
       <FormAddCountry
         onChangeAddName={handleSetCountryName}
         onChangeAddCapital={handleSetCountryCapital}
@@ -99,10 +94,7 @@ function App() {
 
       <Filter onChangeInput={handleSetInputValue} onChangeSelect={handleSetInputSelect} />
 
-      <ListCountries
-        infoCountries={filteredCountries}
-        onClickDeleteCountry={handleSetRemovedCountries}
-      />
+      <ListCountries infoCountries={filteredCountries} onClickDeleteCountry={handleRemoveCountry} />
     </div>
   );
 }

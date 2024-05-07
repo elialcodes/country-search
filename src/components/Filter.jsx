@@ -39,8 +39,10 @@ function Filter({ onChangeInput, onChangeSelect }) {
     </div>
   );
 }
+
 Filter.propTypes = {
   onChangeInput: PropTypes.func,
   onChangeSelect: PropTypes.func,
 };
+
 export default Filter;

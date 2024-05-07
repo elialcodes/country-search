@@ -38,6 +38,7 @@ function Form({
     </>
   );
 }
+
 Form.propTypes = {
   onChangeAddName: PropTypes.func,
   onChangeAddCapital: PropTypes.func,

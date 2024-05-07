@@ -20,12 +20,14 @@ function Country({ infoCountry, onClickDeleteCountry }) {
 }
 
 Country.propTypes = {
-  id: PropTypes.number,
-  infoCountry: PropTypes.object,
-  flag: PropTypes.string,
-  name: PropTypes.string,
-  capital: PropTypes.string,
-  continents: PropTypes.string,
+  infoCountry: PropTypes.shape({
+    flag: PropTypes.string,
+    name: PropTypes.shape({
+      common: PropTypes.string,
+    }),
+    capital: PropTypes.arrayOf(PropTypes.string),
+    continents: PropTypes.arrayOf(PropTypes.string),
+  }),
   onClickDeleteCountry: PropTypes.func,
 };
 
