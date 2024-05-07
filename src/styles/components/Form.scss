@@ -1,0 +1,21 @@
+.form {
+  margin-left: 40px;
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+.titlesFilter {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.label {
+  margin-left: 20px;
+}
+
+.buttonSubmit {
+  background-color: lightgreen;
+  padding: 2px 7px;
+  cursor: pointer;
+}

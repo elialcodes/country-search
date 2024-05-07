@@ -1,37 +1,7 @@
-/* Estilos que queramos, los importamos en el archivo src/App.jsx */
 header {
   text-align: center;
   margin-bottom: 30px;
   background-color: lightgreen;
   padding: 20px 10px;
   line-height: 50px;
-}
-
-.element-column {
-  margin-left: 40px;
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-}
-
-.form {
-  margin-left: 40px;
-  display: flex;
-  gap: 10px;
-  margin: 20px;
-}
-
-.titlesFilter {
-  margin-bottom: 20px;
-  margin-left: 20px;
-}
-
-.label {
-  margin-left: 20px;
-}
-
-.buttonSubmit {
-  background-color: lightgreen;
-  padding: 2px 7px;
-  cursor: pointer;
 }

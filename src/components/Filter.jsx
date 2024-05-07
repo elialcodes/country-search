@@ -1,4 +1,4 @@
-import '../styles/App.scss';
+import '../styles/components/Form.scss';
 import PropTypes from 'prop-types';
 
 function Filter({ onChangeInput, onChangeSelect }) {
@@ -11,22 +11,16 @@ function Filter({ onChangeInput, onChangeSelect }) {
   };
 
   return (
-    <div className="filter">
+    <div>
       <h3 className="titlesFilter">Filters:</h3>
       <label className="label" htmlFor="name">
         Search by country:{' '}
       </label>
-      <input
-        id="name"
-        className="centered-element"
-        type="text"
-        placeholder="Country..."
-        onChange={handleInput}
-      />
+      <input id="name" type="text" placeholder="Country..." onChange={handleInput} />
       <label className="label" htmlFor="continent">
         Search by continent:{' '}
       </label>
-      <select id="continent" className="centered-element" type="text" onChange={handleSelect}>
+      <select id="continent" type="text" onChange={handleSelect}>
         <option value="All">All</option>
         <option value="Africa">Africa</option>
         <option value="Antarctica">Antarctica</option>

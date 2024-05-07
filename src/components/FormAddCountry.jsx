@@ -1,4 +1,4 @@
-import '../styles/App.scss';
+import '../styles/components/Form.scss';
 import PropTypes from 'prop-types';
 
 function Form({
