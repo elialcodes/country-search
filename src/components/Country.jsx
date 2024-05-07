@@ -9,7 +9,9 @@ function Country({ infoCountry, onClickDeleteCountry }) {
   return (
     <div className="card">
       <p className="flag">{infoCountry.flag}</p>
-      <p>{infoCountry.name.common}</p>
+      <p className="countryName">
+        <strong>{infoCountry.name.common}</strong>
+      </p>
       <p>{infoCountry.capital[0]}</p>
       <p>{infoCountry.continents[0]}</p>
       <button className="button" onClick={handleDeleteCountry}>

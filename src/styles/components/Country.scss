@@ -1,20 +1,31 @@
 .card {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 14px;
+  line-height: 20px;
   text-align: center;
   border: 3px solid lightgreen;
   border-radius: 10px;
-  padding-bottom: 15px;
+  padding: 15px 5px;
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 
   .flag {
     font-size: 40px;
-    margin: 15px;
+    margin: 10px;
+  }
+
+  .countryName {
+    font-size: 16px;
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
   }
 
   .button {
     background-color: lightgreen;
     padding: 2px 5px;
-    margin-top: 15px;
+    margin: 15px 0px 5px 0px;
     border-radius: 5px;
     cursor: pointer;
   }
